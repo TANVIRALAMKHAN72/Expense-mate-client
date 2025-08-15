@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { useNavigate } from "react-router";
 
+
 const TotalExpense = () => {
   const navigate = useNavigate();
   const [expenses, setExpenses] = useState([]);
@@ -39,7 +40,6 @@ const TotalExpense = () => {
       <div className="mb-6 p-4 bg-blue-100 rounded-md text-blue-800 font-bold text-lg text-center">
         Total Expense: ৳{total.toFixed(2)}
       </div>
-
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300 rounded-md">
           <thead className="bg-gray-100">

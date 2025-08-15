@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import axios from "axios";
 
+
 const EditExpense = () => {
   const { id } = useParams();
   const navigate = useNavigate();
