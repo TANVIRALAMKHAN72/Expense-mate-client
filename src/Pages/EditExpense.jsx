@@ -13,9 +13,11 @@ const EditExpense = () => {
   });
   const [loading, setLoading] = useState(true);
 
+  const API_URL = import.meta.env.VITE_API_URL; // <-- .env থেকে URL
+
   const fetchExpense = async () => {
     try {
-      const res = await axios.get(`https://expense-mate-mhqg.onrender.com/api/expenses/${id}`);
+      const res = await axios.get(`${API_URL}/api/expenses/${id}`);
       const expense = res.data;
       if (expense) {
         setFormData({
@@ -53,7 +55,7 @@ const EditExpense = () => {
     }
 
     try {
-      const res = await axios.put(`https://expense-mate-mhqg.onrender.com/api/expenses/${id}`, {
+      const res = await axios.put(`${API_URL}/api/expenses/${id}`, {
         title,
         amount: Number(amount),
         category,

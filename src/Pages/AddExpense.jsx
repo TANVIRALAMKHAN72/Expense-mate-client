@@ -9,6 +9,8 @@ const AddExpense = () => {
     date: "",
   });
 
+  const API_URL = import.meta.env.VITE_API_URL; // <-- .env থেকে URL
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -27,7 +29,7 @@ const AddExpense = () => {
     }
 
     try {
-      await axios.post("https://expense-mate-mhqg.onrender.com/api/expenses", formData);
+      await axios.post(`${API_URL}/api/expenses`, formData); // <-- API call
       alert("Expense Added Successfully!");
       setFormData({ title: "", amount: "", category: "", date: "" });
     } catch (error) {

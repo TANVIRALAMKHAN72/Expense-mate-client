@@ -7,9 +7,11 @@ const TotalExpense = () => {
   const [expenses, setExpenses] = useState([]);
   const [total, setTotal] = useState(0);
 
+  const API_URL = import.meta.env.VITE_API_URL; // <-- .env থেকে URL
+
   const fetchExpenses = async () => {
     try {
-      const res = await fetch("https://expense-mate-mhqg.onrender.com/api/expenses");
+      const res = await fetch(`${API_URL}/api/expenses`);
       const data = await res.json();
       setExpenses(data);
       setTotal(data.reduce((sum, e) => sum + Number(e.amount), 0));
@@ -23,7 +25,7 @@ const TotalExpense = () => {
   const handleDelete = async (_id) => {
     if (!window.confirm("Are you sure you want to delete this expense?")) return;
     try {
-      const res = await fetch(`https://expense-mate-mhqg.onrender.com/api/expenses/${_id}`, { method: "DELETE" });
+      const res = await fetch(`${API_URL}/api/expenses/${_id}`, { method: "DELETE" });
       if (res.ok) {
         const newExpenses = expenses.filter(exp => exp._id !== _id);
         setExpenses(newExpenses);
