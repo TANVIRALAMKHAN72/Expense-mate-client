@@ -13,7 +13,7 @@ Frontend is built using **React.js**. Backend uses **Node.js + Express + MongoDB
 
 ## 🛠 Features
 
-**Live Demo:** [https://expense-tracker.vercel.app](https://expense-tracker.vercel.app)
+**Live Demo:** [https://expense-mate-client-iota.vercel.app/](https://expense-mate-client-iota.vercel.app/)
 
 ### Backend (Node.js + Express + MongoDB)
 - **POST /api/expenses** → Add a new expense  
